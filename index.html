@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART CREATION DESIGN & BUILD | 一站式装修公司 | 新山 Johor Bahru</title>
+    <meta name="description" content="ART CREATION DESIGN & BUILD — 新山一站式装修公司，10年经验，专业扩建与水泥工程。让装修变简单。One-stop renovation company in Johor Bahru, Malaysia.">
+    <meta name="keywords" content="装修, renovation, Johor Bahru, 新山, 扩建, extension, 水泥工程, concrete, 一站式装修, one-stop renovation, Art Creation">
+    <meta property="og:title" content="ART CREATION DESIGN & BUILD | 一站式装修公司">
+    <meta property="og:description" content="新山10年专业装修团队，让装修变简单。专业扩建、水泥、厨房、厕所翻新一站式服务。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A1628',
+                        'navy-light': '#1a2a45',
+                        'navy-dark': '#060e1a',
+                        gold: '#C9A96E',
+                        'gold-light': '#d4bc8a',
+                        'gold-dark': '#b8944f',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; overflow-x: hidden; }
+        
+        /* Animations */
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        .scale-in { opacity: 0; transform: scale(0.9); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .scale-in.visible { opacity: 1; transform: scale(1); }
+        
+        /* Stagger children */
+        .stagger-children > *:nth-child(1) { transition-delay: 0s; }
+        .stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children > *:nth-child(3) { transition-delay: 0.2s; }
+        .stagger-children > *:nth-child(4) { transition-delay: 0.3s; }
+        .stagger-children > *:nth-child(5) { transition-delay: 0.35s; }
+        .stagger-children > *:nth-child(6) { transition-delay: 0.4s; }
+        .stagger-children > *:nth-child(7) { transition-delay: 0.45s; }
+        .stagger-children > *:nth-child(8) { transition-delay: 0.5s; }
+        .stagger-children > *:nth-child(9) { transition-delay: 0.55s; }
+        .stagger-children > *:nth-child(10) { transition-delay: 0.6s; }
+
+        /* Scroll indicator */
+        @keyframes bounce-down {
+            0%, 100% { transform: translateY(0) translateX(-50%); }
+            50% { transform: translateY(12px) translateX(-50%); }
+        }
+        .scroll-indicator { animation: bounce-down 2s ease-in-out infinite; }
+
+        /* Navbar */
+        .navbar { transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; }
+        .navbar.scrolled { background-color: rgba(10, 22, 40, 0.97); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+
+        /* Service card hover */
+        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(10, 22, 40, 0.15); }
+
+        /* Style card */
+        .style-card { transition: transform 0.4s ease; }
+        .style-card:hover { transform: scale(1.03); }
+
+        /* Gold line */
+        .gold-line { width: 60px; height: 3px; background: #C9A96E; }
+        .gold-line-center { width: 60px; height: 3px; background: #C9A96E; margin: 0 auto; }
+
+        /* Floating WhatsApp */
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5); }
+
+        /* Mobile menu */
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.open { transform: translateX(0); }
+
+        /* Testimonial stars */
+        .star { color: #C9A96E; }
+
+        /* Hero gradient */
+        .hero-bg {
+            background: linear-gradient(135deg, #0A1628 0%, #1a2a45 40%, #0A1628 70%, #162038 100%);
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(201, 169, 110, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(201, 169, 110, 0.05) 0%, transparent 50%);
+        }
+
+        /* CTA gradient */
+        .cta-gradient {
+            background: linear-gradient(135deg, #0A1628 0%, #1a2a45 50%, #0A1628 100%);
+        }
+
+        /* Counter */
+        .counter-value { font-variant-numeric: tabular-nums; }
+
+        /* Portfolio placeholder */
+        .portfolio-placeholder {
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            display: flex; align-items: center; justify-content: center;
+            color: #94a3b8; font-size: 0.875rem;
+        }
+
+        /* Form */
+        .form-input { transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .form-input:focus { border-color: #C9A96E; box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15); outline: none; }
+
+        /* Section divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.3), transparent);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-2">
+                    <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-wide">ART CREATION</span>
+                    <span class="hidden sm:inline text-gold text-sm font-body">DESIGN & BUILD</span>
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#about" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">关于我们</a>
+                    <a href="#services" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">服务项目</a>
+                    <a href="#styles" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">装修风格</a>
+                    <a href="#portfolio" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">作品案例</a>
+                    <a href="#testimonials" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">客户评价</a>
+                    <a href="#contact" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">联系我们</a>
+                    <a href="https://alvin0531.github.io/artcreation-quote/" class="bg-gold hover:bg-gold-dark text-navy font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">免费估价</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="lg:hidden text-white p-2" aria-label="Open menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-navy/98 backdrop-blur-lg z-50 lg:hidden">
+            <div class="flex justify-end p-6">
+                <button id="closeMenu" class="text-white" aria-label="Close menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6 px-8">
+                <a href="#about" class="mobile-link text-white/90 hover:text-gold transition-colors text-lg">关于我们</a>
+                <a href="#services" class="mobile-link text-white/90 hover:text-gold transition-colors text-lg">服务项目</a>
+                <a href="#styles" class="mobile-link text-white/90 hover:text-gold transition-colors text-lg">装修风格</a>
+                <a href="#portfolio" class="mobile-link text-white/90 hover:text-gold transition-colors text-lg">作品案例</a>
+                <a href="#testimonials" class="mobile-link text-white/90 hover:text-gold transition-colors text-lg">客户评价</a>
+                <a href="#contact" class="mobile-link text-white/90 hover:text-gold transition-colors text-lg">联系我们</a>
+                <a href="https://alvin0531.github.io/artcreation-quote/" class="bg-gold hover:bg-gold-dark text-navy font-semibold px-5 py-3 rounded-lg transition-colors text-center">免费估价 Free Quote</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile overlay -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div class="fade-up">
+                <p class="text-gold font-body text-sm sm:text-base tracking-[0.3em] uppercase mb-4">Design & Build</p>
+                <h1 class="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    ART CREATION
+                </h1>
+                <div class="gold-line-center mb-8"></div>
+                <p class="text-white/90 font-heading text-xl sm:text-2xl md:text-3xl mb-3 italic">
+                    Build It Right. Live It Well.
+                </p>
+                <p class="text-gold text-lg sm:text-xl mb-12 font-medium">
+                    用心建造 · 让装修变简单
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://alvin0531.github.io/artcreation-quote/" class="bg-gold hover:bg-gold-dark text-navy font-bold px-8 py-4 rounded-lg transition-all text-base sm:text-lg shadow-lg hover:shadow-xl">
+                        免费估价 Free Quote
+                    </a>
+                    <a href="#contact" class="border-2 border-white/40 hover:border-gold text-white hover:text-gold font-semibold px-8 py-4 rounded-lg transition-all text-base sm:text-lg">
+                        联系我们 Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 scroll-indicator">
+            <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 sm:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">About Us</p>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">关于我们</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+                <div class="fade-left">
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold text-navy mb-6">
+                        十年匠心 · 一站式装修服务
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-base sm:text-lg">
+                        <strong>ART CREATION DESIGN & BUILD</strong> 扎根新山十年，是一家专注于<strong>扩建与水泥工程</strong>的专业装修公司。我们拥有25至30人的核心施工团队，以精湛的水泥技术和严谨的施工标准，赢得了客户的广泛信赖。
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-base sm:text-lg">
+                        除了核心的扩建工程外，我们与多支长期合作的专业团队紧密协作，提供<strong>水电、天花板、铝制门窗、家私定制、SPC地板、瓷砖</strong>等全方位服务 —— 真正的一站式装修体验。
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-base sm:text-lg">
+                        我们相信：好的装修不只是施工，更是<strong>理解客户的需求，解决客户的烦恼</strong>。让每一位屋主都能轻松、安心地完成梦想家居的改造。
+                    </p>
+                    <p class="text-gray-500 mt-4 text-sm italic">
+                        With 10 years of experience in Johor Bahru, we specialize in concrete extension works backed by a 25-member core team. Our trusted network of partner teams enables us to deliver complete one-stop renovation services — from structure to finishing.
+                    </p>
+                </div>
+                <div class="fade-right">
+                    <!-- Placeholder for company photo -->
+                    <div class="bg-gradient-to-br from-navy/5 to-navy/10 rounded-2xl aspect-[4/3] flex items-center justify-center border border-navy/10">
+                        <div class="text-center">
+                            <div class="text-5xl mb-3">🏗️</div>
+                            <p class="text-navy/40 text-sm">公司照片即将上传</p>
+                            <p class="text-navy/30 text-xs">Company photo coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 stagger-children">
+                <div class="text-center fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="counter-value font-heading text-4xl sm:text-5xl font-bold text-navy" data-target="10">0</div>
+                    <div class="text-gold font-bold text-lg mt-1">+</div>
+                    <p class="text-gray-600 font-medium mt-2 text-sm sm:text-base">年经验<br><span class="text-gray-400 text-xs">Years Experience</span></p>
+                </div>
+                <div class="text-center fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="counter-value font-heading text-4xl sm:text-5xl font-bold text-navy" data-target="500">0</div>
+                    <div class="text-gold font-bold text-lg mt-1">+</div>
+                    <p class="text-gray-600 font-medium mt-2 text-sm sm:text-base">完成项目<br><span class="text-gray-400 text-xs">Projects Completed</span></p>
+                </div>
+                <div class="text-center fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="counter-value font-heading text-4xl sm:text-5xl font-bold text-navy" data-target="25">0</div>
+                    <div class="text-gold font-bold text-lg mt-1">+</div>
+                    <p class="text-gray-600 font-medium mt-2 text-sm sm:text-base">团队成员<br><span class="text-gray-400 text-xs">Team Members</span></p>
+                </div>
+                <div class="text-center fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="counter-value font-heading text-4xl sm:text-5xl font-bold text-navy" data-target="100">0</div>
+                    <div class="text-gold font-bold text-lg mt-1">%</div>
+                    <p class="text-gray-600 font-medium mt-2 text-sm sm:text-base">用心承诺<br><span class="text-gray-400 text-xs">Commitment</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 sm:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Our Services</p>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">服务项目</h2>
+                <div class="gold-line-center mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto">专业团队 · 全方位装修服务 · 一站搞定</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 stagger-children">
+                <!-- Service 1 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">扩建工程</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Extension</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">后院扩建、阳台扩建、厕所扩建，扩大您的居住空间</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🧱</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">水泥工程</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Concrete</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">柱子、砌墙、封墙、灶台，扎实可靠的基础工程</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🔲</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">瓷砖工程</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Tiling</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">地砖、墙砖翻新，精准铺贴，美观耐用</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🍳</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">厨房工程</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Kitchen</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">水泥灶台、铝制橱柜、家私橱柜、Quartz Stone台面</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🚿</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">厕所翻新</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Bathroom</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">全套翻新、专业防水处理，焕然一新</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🪑</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">家私定制</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Custom Furniture</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">衣柜、电视柜、书桌、收纳柜 (Plywood+Formica)</p>
+                </div>
+                <!-- Service 7 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">天花板</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Ceiling</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">石膏平板天花板、L-box设计，打造层次感空间</p>
+                </div>
+                <!-- Service 8 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🪟</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">铝制工程</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Aluminium</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">落地窗、推拉门、防盗门，安全美观兼具</p>
+                </div>
+                <!-- Service 9 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">水电工程</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Electrical</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">全屋配线、灯位规划、插座安装，安全标准施工</p>
+                </div>
+                <!-- Service 10 -->
+                <div class="service-card fade-up bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="font-heading text-lg font-bold text-navy mb-1">油漆工程</h3>
+                    <p class="text-gold text-xs font-medium mb-3 uppercase tracking-wide">Painting</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">内外墙油漆 (Nippon)，色彩焕新，持久亮丽</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Styles Section -->
+    <section id="styles" class="py-20 sm:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Design Styles</p>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">装修风格</h2>
+                <div class="gold-line-center mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto">热门装修风格参考，找到属于您的理想家居</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+                <!-- Style 1 -->
+                <div class="style-card fade-up bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="portfolio-placeholder aspect-[16/10] rounded-t-2xl">
+                        <span>照片即将上传</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-navy mb-1">现代简约</h3>
+                        <p class="text-gold text-xs font-medium uppercase tracking-wide mb-3">Modern Minimalist</p>
+                        <p class="text-gray-500 text-sm leading-relaxed">干净利落的线条，中性色调搭配开放空间，less is more的生活美学。</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">简洁线条</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">中性色调</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">开放空间</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Style 2 -->
+                <div class="style-card fade-up bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="portfolio-placeholder aspect-[16/10] rounded-t-2xl">
+                        <span>照片即将上传</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-navy mb-1">北欧风</h3>
+                        <p class="text-gold text-xs font-medium uppercase tracking-wide mb-3">Scandinavian</p>
+                        <p class="text-gray-500 text-sm leading-relaxed">浅色木质元素搭配白墙，充足自然光线，营造温馨舒适的北欧氛围。</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">浅色木质</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">白色基调</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">温馨自然</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Style 3 -->
+                <div class="style-card fade-up bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="portfolio-placeholder aspect-[16/10] rounded-t-2xl">
+                        <span>照片即将上传</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-navy mb-1">工业风</h3>
+                        <p class="text-gold text-xs font-medium uppercase tracking-wide mb-3">Industrial</p>
+                        <p class="text-gray-500 text-sm leading-relaxed">裸露砖墙与水泥质感，金属元素点缀，原始粗犷中带有独特个性。</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">裸露砖墙</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">金属元素</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">粗犷质感</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Style 4 -->
+                <div class="style-card fade-up bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="portfolio-placeholder aspect-[16/10] rounded-t-2xl">
+                        <span>照片即将上传</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-navy mb-1">日式和风</h3>
+                        <p class="text-gold text-xs font-medium uppercase tracking-wide mb-3">Japanese / Muji</p>
+                        <p class="text-gray-500 text-sm leading-relaxed">原木色调为主，融入禅意美学与自然材质，追求宁静简约的生活哲学。</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">原木色调</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">禅意美学</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">自然材质</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Style 5 -->
+                <div class="style-card fade-up bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="portfolio-placeholder aspect-[16/10] rounded-t-2xl">
+                        <span>照片即将上传</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-navy mb-1">轻奢风</h3>
+                        <p class="text-gold text-xs font-medium uppercase tracking-wide mb-3">Modern Luxury</p>
+                        <p class="text-gray-500 text-sm leading-relaxed">大理石纹理搭配金色点缀，高端材质呈现低调奢华的优雅品味。</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">大理石纹</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">金色点缀</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">高端材质</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Style 6 -->
+                <div class="style-card fade-up bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="portfolio-placeholder aspect-[16/10] rounded-t-2xl">
+                        <span>照片即将上传</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-navy mb-1">田园乡村</h3>
+                        <p class="text-gold text-xs font-medium uppercase tracking-wide mb-3">Rustic / Country</p>
+                        <p class="text-gray-500 text-sm leading-relaxed">温暖木质与复古元素，营造舒适温馨的家居氛围，像家一样的感觉。</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">温暖木质</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">复古元素</span>
+                            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">温馨舒适</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 sm:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Portfolio</p>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">作品案例</h2>
+                <div class="gold-line-center mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto">每一个项目都是我们用心的见证</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Taman Molek 双层排屋扩建</h4>
+                    <p class="text-gray-400 text-sm">后院扩建 + 厨房翻新</p>
+                </div>
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Setia Indah 厕所翻新</h4>
+                    <p class="text-gray-400 text-sm">全套厕所翻新 + 防水处理</p>
+                </div>
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Permas Jaya 厨房工程</h4>
+                    <p class="text-gray-400 text-sm">水泥灶台 + 铝制橱柜 + Quartz台面</p>
+                </div>
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Mount Austin 全屋装修</h4>
+                    <p class="text-gray-400 text-sm">现代简约风格 · 一站式服务</p>
+                </div>
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Skudai 阳台扩建</h4>
+                    <p class="text-gray-400 text-sm">阳台扩建 + 铝制落地窗</p>
+                </div>
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Johor Jaya 家私定制</h4>
+                    <p class="text-gray-400 text-sm">全屋衣柜 + 电视柜 + 书桌</p>
+                </div>
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Taman Daya 天花板工程</h4>
+                    <p class="text-gray-400 text-sm">石膏天花板 + L-box设计</p>
+                </div>
+                <div class="fade-up group">
+                    <div class="portfolio-placeholder aspect-square rounded-xl mb-3">
+                        <span>照片即将上传</span>
+                    </div>
+                    <h4 class="font-heading font-bold text-navy">Bukit Indah 全屋油漆</h4>
+                    <p class="text-gray-400 text-sm">内外墙 Nippon 油漆翻新</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 mt-10 text-sm fade-up">更多作品照片即将上传 · More photos coming soon</p>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-5xl mx-auto"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 sm:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Testimonials</p>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">客户评价</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+                <div class="fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="flex text-gold text-lg mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">"从设计到施工都非常专业，工人做事很细心。后院扩建的质量非常好，完全超出预期。值得推荐！"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">陈</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-navy text-sm">陈先生</p>
+                            <p class="text-gray-400 text-xs">Taman Molek · 排屋扩建</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="flex text-gold text-lg mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">"一站式服务真的很方便，不用自己找不同的师傅。厨房和厕所翻新效果很满意，价格也合理。"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">林</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-navy text-sm">林太太</p>
+                            <p class="text-gray-400 text-xs">Setia Indah · 厨房厕所翻新</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="flex text-gold text-lg mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">"老板很有耐心，会详细解释每个步骤和材料。施工期间还会定期更新进度，让人很放心。强烈推荐！"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">黄</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-navy text-sm">黄先生</p>
+                            <p class="text-gray-400 text-xs">Mount Austin · 全屋装修</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up bg-gray-50 rounded-2xl p-6 sm:p-8">
+                    <div class="flex text-gold text-lg mb-4">★★★★⭐</div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">"朋友介绍来的，果然没有让人失望。天花板和油漆做得很细致，整个屋子焕然一新，性价比很高。"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">张</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-navy text-sm">张小姐</p>
+                            <p class="text-gray-400 text-xs">Permas Jaya · 天花板+油漆</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Estimate CTA Section -->
+    <section id="estimate" class="cta-gradient py-20 sm:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-40 h-40 border border-gold/30 rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 border border-gold/20 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 w-80 h-80 border border-gold/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div class="fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-4">Free Estimate</p>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">想知道您的装修预算？</h2>
+                <p class="text-white/70 text-lg sm:text-xl mb-3">Wondering about your renovation budget?</p>
+                <p class="text-white/50 text-base mb-10">30秒快速估价，免费无义务 · 30-second quick estimate, free with no obligation</p>
+                <a href="https://alvin0531.github.io/artcreation-quote/" class="inline-block bg-gold hover:bg-gold-dark text-navy font-bold px-10 py-5 rounded-xl transition-all text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
+                    立即免费估价 Get Free Quote →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 sm:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Contact Us</p>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4">联系我们</h2>
+                <div class="gold-line-center mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto">随时欢迎咨询，我们将尽快回复您</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Contact Info -->
+                <div class="fade-left">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-navy/5 rounded-xl flex items-center justify-center text-xl flex-shrink-0">📞</div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-1">电话 Phone</h4>
+                                <a href="tel:01XXXXXXXX" class="text-gray-600 hover:text-gold transition-colors">01X-XXXXXXX</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-navy/5 rounded-xl flex items-center justify-center text-xl flex-shrink-0">💬</div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-1">WhatsApp</h4>
+                                <a href="https://wa.me/601XXXXXXXX" target="_blank" class="text-gray-600 hover:text-gold transition-colors">点击聊天 Chat with us</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-navy/5 rounded-xl flex items-center justify-center text-xl flex-shrink-0">📧</div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-1">电邮 Email</h4>
+                                <a href="mailto:info@artcreation.com" class="text-gray-600 hover:text-gold transition-colors">info@artcreation.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-navy/5 rounded-xl flex items-center justify-center text-xl flex-shrink-0">📍</div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-1">地址 Address</h4>
+                                <p class="text-gray-600">Johor Bahru, Johor, Malaysia</p>
+                                <p class="text-gray-400 text-sm">[完整地址即将更新]</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-navy/5 rounded-xl flex items-center justify-center text-xl flex-shrink-0">🕘</div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-1">营业时间 Operating Hours</h4>
+                                <p class="text-gray-600">周一至周六 Mon - Sat: 9:00 AM - 6:00 PM</p>
+                                <p class="text-gray-400 text-sm">周日 Sunday: 预约制 By appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="fade-right">
+                    <form id="contactForm" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                        <h3 class="font-heading text-xl font-bold text-navy mb-6">发送询问 Send Inquiry</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">姓名 Name <span class="text-red-400">*</span></label>
+                                <input type="text" id="formName" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-lg text-sm" placeholder="请输入您的姓名">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">电话 Phone <span class="text-red-400">*</span></label>
+                                <input type="tel" id="formPhone" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-lg text-sm" placeholder="例如：012-3456789">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">信息 Message</label>
+                                <textarea id="formMessage" rows="4" class="form-input w-full px-4 py-3 border border-gray-200 rounded-lg text-sm resize-none" placeholder="请描述您的装修需求..."></textarea>
+                            </div>
+                            <button type="submit" id="submitBtn" class="w-full bg-navy hover:bg-navy-light text-white font-semibold py-3.5 rounded-lg transition-colors text-sm">
+                                发送信息 Send Message
+                            </button>
+                            <p id="formStatus" class="text-center text-sm hidden"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="font-heading text-2xl font-bold mb-2">ART CREATION</h3>
+                    <p class="text-gold text-sm mb-4">DESIGN & BUILD</p>
+                    <p class="text-white/50 text-sm leading-relaxed">新山一站式装修公司<br>让装修变简单<br>Build It Right. Live It Well.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gold text-sm tracking-wide uppercase">快速链接 Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-white/60 hover:text-gold transition-colors text-sm">关于我们 About</a>
+                        <a href="#services" class="block text-white/60 hover:text-gold transition-colors text-sm">服务项目 Services</a>
+                        <a href="#styles" class="block text-white/60 hover:text-gold transition-colors text-sm">装修风格 Styles</a>
+                        <a href="#portfolio" class="block text-white/60 hover:text-gold transition-colors text-sm">作品案例 Portfolio</a>
+                        <a href="#contact" class="block text-white/60 hover:text-gold transition-colors text-sm">联系我们 Contact</a>
+                        <a href="https://alvin0531.github.io/artcreation-quote/" class="block text-gold hover:text-gold-light transition-colors text-sm font-medium">免费估价 Free Quote →</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gold text-sm tracking-wide uppercase">关注我们 Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-gold/20 rounded-lg flex items-center justify-center transition-colors" title="小红书 Xiaohongshu">
+                            <span class="text-lg">📕</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-gold/20 rounded-lg flex items-center justify-center transition-colors" title="TikTok">
+                            <span class="text-lg">🎵</span>
+                        </a>
+                        <a href="https://wa.me/601XXXXXXXX" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-gold/20 rounded-lg flex items-center justify-center transition-colors" title="WhatsApp">
+                            <span class="text-lg">💬</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-white/40 text-sm">© 2026 ART CREATION DESIGN & BUILD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/601XXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        // ===== Navbar scroll =====
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== Mobile menu =====
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() { mobileMenu.classList.add('open'); menuOverlay.classList.remove('hidden'); }
+        function closeMenuFn() { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+        menuOverlay.addEventListener('click', closeMenuFn);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenuFn));
+
+        // ===== Scroll animations (IntersectionObserver) =====
+        const animatedEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        animatedEls.forEach(el => observer.observe(el));
+
+        // ===== Counter animation =====
+        const counters = document.querySelectorAll('.counter-value');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    const duration = 2000;
+                    const start = performance.now();
+                    
+                    function update(now) {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(eased * target);
+                        if (progress < 1) requestAnimationFrame(update);
+                        else el.textContent = target;
+                    }
+                    requestAnimationFrame(update);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // ===== Contact form → Telegram =====
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const message = document.getElementById('formMessage').value.trim();
+
+            if (!name || !phone) return;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = '发送中...';
+
+            const text = `🏠 *网站询问 Website Inquiry*\n\n👤 姓名: ${name}\n📞 电话: ${phone}\n💬 信息: ${message || '(未填写)'}`;
+
+            try {
+                const res = await fetch(`https://api.telegram.org/bot8496062303:AAFyG-_nJ6rYagV2rux0_XumlK6dKYAkixU/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: '913877486',
+                        text: text,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                if (res.ok) {
+                    formStatus.textContent = '✅ 信息已发送！我们会尽快联系您。Message sent successfully!';
+                    formStatus.className = 'text-center text-sm text-green-600';
+                    formStatus.classList.remove('hidden');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Send failed');
+                }
+            } catch (err) {
+                formStatus.textContent = '❌ 发送失败，请直接联系我们的WhatsApp。Sending failed, please contact us via WhatsApp.';
+                formStatus.className = 'text-center text-sm text-red-500';
+                formStatus.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = '发送信息 Send Message';
+            }
+        });
+    </script>
+</body>
+</html>
