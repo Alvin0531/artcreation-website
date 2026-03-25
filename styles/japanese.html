@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日式和风 Japanese / Muji | ART CREATION DESIGN & BUILD</title>
+    <meta name="description" content="日式和风装修风格 — 原木色调为主，融入禅意美学与自然材质，追求宁静简约的生活哲学。ART CREATION 新山一站式装修。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A1628',
+                        'navy-light': '#1a2a45',
+                        gold: '#C9A96E',
+                        'gold-light': '#d4bc8a',
+                        'gold-dark': '#b8944f',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #333; overflow-x: hidden; }
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        .stagger-children > *:nth-child(1) { transition-delay: 0s; }
+        .stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children > *:nth-child(3) { transition-delay: 0.15s; }
+        .stagger-children > *:nth-child(4) { transition-delay: 0.2s; }
+        .stagger-children > *:nth-child(5) { transition-delay: 0.25s; }
+        .stagger-children > *:nth-child(6) { transition-delay: 0.3s; }
+        .navbar { transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; }
+        .navbar.scrolled { background-color: rgba(10, 22, 40, 0.97); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .gold-line-center { width: 60px; height: 3px; background: #C9A96E; margin: 0 auto; }
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .color-swatch { width: 40px; height: 40px; border-radius: 50%; display: inline-block; border: 2px solid #e5e7eb; }
+        .gallery-item { transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.02); }
+        .cta-gradient { background: linear-gradient(135deg, #0A1628 0%, #1a2a45 50%, #0A1628 100%); }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(10,22,40,0.7) 0%, rgba(10,22,40,0.4) 50%, rgba(10,22,40,0.8) 100%); }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-wide">ART CREATION</span>
+                    <span class="hidden sm:inline text-gold text-sm font-body">DESIGN & BUILD</span>
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="../index.html" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">← 返回首页</a>
+                    <a href="https://alvin0531.github.io/artcreation-quote/" class="bg-gold hover:bg-gold-dark text-navy font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm hidden sm:inline-block">免费估价</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1545083036-b175dd155a1d?w=1200&q=80" alt="日式和风" class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center px-4">
+            <p class="text-gold font-medium text-sm tracking-[0.3em] uppercase mb-4 fade-up">Design Style</p>
+            <h1 class="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 fade-up">日式和风</h1>
+            <p class="text-white/80 font-heading text-xl sm:text-2xl italic fade-up">Japanese / Muji</p>
+            <div class="gold-line-center mt-6 fade-up"></div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Style Overview</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">风格概述</h2>
+                <div class="gold-line-center mb-8"></div>
+            </div>
+            <div class="space-y-6 text-gray-600 leading-relaxed text-base sm:text-lg fade-up">
+                <p>日式和风（Japanese Style），也常被称为"无印良品风"或"Muji风"，根植于日本传统美学中的<strong>"侘寂"（Wabi-Sabi）</strong>理念——在不完美中发现美，在简朴中体悟深意。这种设计哲学强调与自然的和谐共处，追求一种宁静、质朴、回归本真的生活方式。每一个空间都像是一首安静的诗，让人在繁忙的都市生活中找到内心的平静。</p>
+                <p>在马来西亚，日式风格的受欢迎程度逐年攀升，尤其受到注重生活品质的年轻家庭和单身专业人士的青睐。日本文化在马来西亚本就有深厚的影响力——从日本料理到日系品牌，马来西亚华人对日式美学有着天然的亲近感。日式和风的那种温润、整洁、井井有条的空间感，恰好满足了马来西亚屋主对"家"的理想想象。</p>
+                <p>日式风格的核心并非昂贵的材料或复杂的工艺，而是对<strong>空间的尊重</strong>和对<strong>生活的用心</strong>。它教会我们：真正的奢侈不是拥有更多，而是在有限的空间中，创造出无限的安宁与美好。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Gallery</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">灵感图库</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 stagger-children">
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800&q=80" alt="日式客厅" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80" alt="日式餐厅" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="日式卧室" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800&q=80" alt="日式空间" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=800&q=80" alt="日式设计" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?w=800&q=80" alt="日式细节" class="w-full h-full object-cover" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Elements -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Design Elements</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">设计要点</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">色彩搭配</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">日式和风以<strong>大地色系</strong>为核心。原木色（白橡木、桧木色调）占据主导地位，搭配米白、暖灰和浅卡其。墙面以温暖的白色或极浅的米色为主。点缀色取自自然——抹茶绿、藤色、淡墨色。整体色调温润内敛，如同清晨的阳光洒进和室。</p>
+                    <div class="flex gap-3 mt-4">
+                        <span class="color-swatch" style="background:#D4B896;" title="原木色"></span>
+                        <span class="color-swatch" style="background:#F5F0E8;" title="米白"></span>
+                        <span class="color-swatch" style="background:#C8C0B0;" title="暖灰"></span>
+                        <span class="color-swatch" style="background:#8FAE6E;" title="抹茶绿"></span>
+                        <span class="color-swatch" style="background:#4A4A42;" title="淡墨色"></span>
+                    </div>
+                </div>
+
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🪵</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">材质选择</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">木质是日式风格的绝对主角。推荐使用<strong>浅色至中色调的SPC地板</strong>（白橡木纹或桧木纹），或木纹瓷砖。墙面保持简洁的白色。日式特色元素包括：<strong>格栅（木条隔断）</strong>、障子门造型、藤编元素和竹帘。家私选择原木质感的板材，搭配白色或浅色面板。避免过多的石材和金属，保持自然温润的基调。</p>
+                </div>
+
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🪑</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">家具风格</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">日式家具强调<strong>低矮、简洁、自然</strong>。沙发选择低矮款式或矮脚设计，颜色以米色、浅灰为主。餐桌推荐原木材质，造型简洁。储物注重<strong>隐藏式设计</strong>——衣柜、鞋柜等尽量嵌入墙体，保持空间的整洁。榻榻米区域如果空间允许，可以在书房或茶室设置，非常有日式韵味。</p>
+                </div>
+
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">💡</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">灯光设计</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">日式灯光追求<strong>柔和、均匀、不刺眼</strong>。推荐大量使用隐藏式灯带，让光线从天花板或柜体边缘柔和地散发出来。吊灯可选择纸灯笼造型或简约的圆形吊灯。色温建议3000K（暖白光），模拟黄昏时分的温柔光线。避免强烈的直射灯光，日式空间需要的是<strong>"像光自然洒落"</strong>的效果。</p>
+                </div>
+
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🛋️</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">软装搭配</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">日式软装遵循<strong>"少而精"</strong>的原则。窗帘选择素色棉麻帘或竹帘，保持自然质感。抱枕和坐垫以棉麻材质为主，颜色素雅。墙面装饰极为克制——一幅水墨画或一枝干花即可。绿植是重要的装饰元素：苔球、小盆栽、枯山水微景观。陶器、竹编、草编等手工艺品也是经典搭配。</p>
+                </div>
+
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">设计贴士</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">日式风格的精髓在于<strong>"断舍离"</strong>。在设计之初就要规划好充足的隐藏式收纳空间，让生活中的杂物有地方安放。马来西亚做日式风格，建议融入<strong>木格栅</strong>作为隔断或装饰墙，既是日式标志元素，也能增加空间的层次感和通风性。另外，日式空间特别适合做架高地板（小型榻榻米平台），下方还能做收纳，一举两得。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suitable Homes & Budget -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-left">
+                    <div class="bg-white rounded-2xl p-8 h-full">
+                        <div class="text-3xl mb-4">🏠</div>
+                        <h3 class="font-heading text-2xl font-bold text-navy mb-4">适合户型</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">日式风格对空间大小没有严格要求，反而更擅长将小空间发挥到极致：</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>公寓 Apartment / Condo</strong> — 日式风格的收纳哲学让小户型也能整洁有序，非常推荐</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>排屋 Terrace House</strong> — 适合全屋或局部应用，特别是书房和卧室</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>半独立 Semi-D</strong> — 可以设置专门的茶室或榻榻米房间</li>
+                        </ul>
+                        <p class="text-gray-500 text-sm mt-4 italic">特别推荐给喜欢整洁、追求内心平静的屋主。日式风格会"逼迫"你养成良好的收纳习惯。</p>
+                    </div>
+                </div>
+
+                <div class="fade-right">
+                    <div class="bg-white rounded-2xl p-8 h-full">
+                        <div class="text-3xl mb-4">💰</div>
+                        <h3 class="font-heading text-2xl font-bold text-navy mb-4">预算参考</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">日式风格的预算属于<strong>中等水平</strong>。虽然材质以木质为主，看似简单，但要做出正宗的日式质感，需要在材质选择和木工细节上多花心思。</p>
+                        <div class="bg-gray-50 rounded-xl p-6 mb-4">
+                            <p class="text-navy font-semibold mb-2">💡 预算定位</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="h-3 bg-gold rounded-full" style="width: 60%;"></div>
+                                <div class="h-3 bg-gray-200 rounded-full" style="width: 40%;"></div>
+                            </div>
+                            <p class="text-sm text-gray-500">中等偏上 · Mid to Mid-High Range</p>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">主要预算花在：优质木纹地板/瓷砖、大量定制家私（隐藏式收纳柜）、木格栅定制。日式风格的家具相对简洁，但木工和收纳设计的工艺要求较高。好在装饰品和软装费用很低——日式风格不需要太多花哨的摆设。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-gradient py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-40 h-40 border border-gold/30 rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 border border-gold/20 rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 fade-up">
+            <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-4">Like This Style?</p>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">喜欢这个风格？</h2>
+            <p class="text-white/70 text-lg mb-3">让我们帮您打造宁静禅意的日式之家</p>
+            <p class="text-white/50 text-base mb-10">30秒快速估价，免费无义务</p>
+            <a href="https://alvin0531.github.io/artcreation-quote/" class="inline-block bg-gold hover:bg-gold-dark text-navy font-bold px-10 py-5 rounded-xl transition-all text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
+                立即免费估价 Get Free Quote →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="font-heading text-xl font-bold">ART CREATION</h3>
+                    <p class="text-gold text-sm">DESIGN & BUILD</p>
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="../index.html" class="text-white/60 hover:text-gold transition-colors">← 返回首页</a>
+                    <a href="modern-minimalist.html" class="text-white/60 hover:text-gold transition-colors">现代简约</a>
+                    <a href="scandinavian.html" class="text-white/60 hover:text-gold transition-colors">北欧风</a>
+                    <a href="industrial.html" class="text-white/60 hover:text-gold transition-colors">工业风</a>
+                    <a href="modern-luxury.html" class="text-white/60 hover:text-gold transition-colors">轻奢风</a>
+                    <a href="rustic.html" class="text-white/60 hover:text-gold transition-colors">田园乡村</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center">
+                <p class="text-white/40 text-sm">© 2026 ART CREATION DESIGN & BUILD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/601XXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+        const animatedEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        animatedEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轻奢风格 Modern Luxury | ART CREATION DESIGN & BUILD</title>
+    <meta name="description" content="轻奢装修风格 — 大理石纹理、金色点缀、高端材质，低调奢华的优雅品味。ART CREATION 新山一站式装修。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A1628',
+                        'navy-light': '#1a2a45',
+                        gold: '#C9A96E',
+                        'gold-light': '#d4bc8a',
+                        'gold-dark': '#b8944f',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #333; overflow-x: hidden; }
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        .stagger-children > *:nth-child(1) { transition-delay: 0s; }
+        .stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children > *:nth-child(3) { transition-delay: 0.15s; }
+        .stagger-children > *:nth-child(4) { transition-delay: 0.2s; }
+        .stagger-children > *:nth-child(5) { transition-delay: 0.25s; }
+        .stagger-children > *:nth-child(6) { transition-delay: 0.3s; }
+        .navbar { transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; }
+        .navbar.scrolled { background-color: rgba(10, 22, 40, 0.97); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .gold-line-center { width: 60px; height: 3px; background: #C9A96E; margin: 0 auto; }
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .color-swatch { width: 40px; height: 40px; border-radius: 50%; display: inline-block; border: 2px solid #e5e7eb; }
+        .gallery-item { transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.02); }
+        .cta-gradient { background: linear-gradient(135deg, #0A1628 0%, #1a2a45 50%, #0A1628 100%); }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(10,22,40,0.7) 0%, rgba(10,22,40,0.4) 50%, rgba(10,22,40,0.8) 100%); }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-wide">ART CREATION</span>
+                    <span class="hidden sm:inline text-gold text-sm font-body">DESIGN & BUILD</span>
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="../index.html" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">← 返回首页</a>
+                    <a href="https://alvin0531.github.io/artcreation-quote/" class="bg-gold hover:bg-gold-dark text-navy font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm hidden sm:inline-block">免费估价</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80" alt="轻奢风格" class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center px-4">
+            <p class="text-gold font-medium text-sm tracking-[0.3em] uppercase mb-4 fade-up">Design Style</p>
+            <h1 class="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 fade-up">轻奢风</h1>
+            <p class="text-white/80 font-heading text-xl sm:text-2xl italic fade-up">Modern Luxury</p>
+            <div class="gold-line-center mt-6 fade-up"></div>
+        </div>
+    </section>
+
+    <!-- Style Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Style Overview</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">风格概述</h2>
+                <div class="gold-line-center mb-8"></div>
+            </div>
+            <div class="space-y-6 text-gray-600 leading-relaxed text-base sm:text-lg fade-up">
+                <p>轻奢风格（Modern Luxury）是近年来备受追捧的装修风格之一，它摒弃了传统欧式的繁复华丽，以更加克制、精致的方式诠释"奢华"二字。轻奢风的核心理念是<strong>"低调的华丽"</strong>——不张扬、不浮夸，却在每一处细节中展现品质与品味。</p>
+                <p>在新山（Johor Bahru）的高端住宅市场中，轻奢风格越来越受到追求品质生活的屋主青睐。它融合了现代简约的线条感与高端材质的质感，通过大理石纹理、金属点缀、丝绒面料等元素，打造出既现代又富有层次感的居住空间。不同于传统豪宅的沉重感，轻奢风格的家居既优雅又舒适，适合日常生活。</p>
+                <p>好的轻奢设计在于<strong>材质的选择与搭配</strong>。每一块石材、每一件金属配件、每一处灯光都经过精心考量，在简洁的空间框架中注入高级感。它不需要堆砌昂贵的装饰品，而是通过少量精致的元素，让整个空间散发出不凡的气质。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Gallery</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">灵感图库</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 stagger-children">
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="轻奢客厅" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80" alt="轻奢餐厅" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&q=80" alt="轻奢卧室" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&q=80" alt="轻奢空间" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="轻奢设计" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80" alt="轻奢浴室" class="w-full h-full object-cover" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Elements -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Design Elements</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">设计要点</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+                <!-- Color Palette -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">色彩搭配</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">以高级灰、米白、象牙白为主色调，搭配深棕色或黑色增加沉稳感。点缀色以<strong>香槟金、玫瑰金</strong>为主，少量运用在五金配件、灯具边框、装饰线条上。整体色调内敛优雅，避免大面积使用鲜艳色彩，营造低调奢华的视觉效果。</p>
+                    <div class="flex gap-3 mt-4">
+                        <span class="color-swatch" style="background:#F5F0EB;" title="象牙白"></span>
+                        <span class="color-swatch" style="background:#9CA3AF;" title="高级灰"></span>
+                        <span class="color-swatch" style="background:#4A3728;" title="深棕"></span>
+                        <span class="color-swatch" style="background:#C9A96E;" title="香槟金"></span>
+                        <span class="color-swatch" style="background:#1a1a1a;" title="经典黑"></span>
+                    </div>
+                </div>
+
+                <!-- Materials -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🪨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">材质选择</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">材质是轻奢风的灵魂所在。首选<strong>大理石纹瓷砖</strong>或天然大理石用于地面与墙面，白色带灰色纹理最为经典。台面推荐<strong>Sintered Stone（岩板）</strong>或Quartz Stone。柜体表面选用<strong>皮革纹、木纹或哑光漆面</strong>，搭配金色或黑金不锈钢边框。局部可使用<strong>镜面玻璃或茶色玻璃</strong>增加空间层次感。</p>
+                </div>
+
+                <!-- Furniture -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🪑</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">家具风格</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">家具以现代造型为基础，但在材质和细节上升级。沙发推荐<strong>意大利皮革或高级丝绒面料</strong>，配以金属细腿。餐桌选用大理石面或岩板面，搭配造型感强的餐椅。电视柜建议定制<strong>哑光烤漆+金属嵌条</strong>设计。床头背景墙可做<strong>软包或皮革硬包</strong>，增添卧室的高级质感。</p>
+                </div>
+
+                <!-- Lighting -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">💡</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">灯光设计</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">灯光是营造轻奢氛围的关键。主照明以<strong>嵌入式筒灯+隐藏灯带</strong>为基础，色温建议2700K-3000K（暖黄光），营造温馨高级的氛围。客厅或餐厅可选择一盏<strong>造型吊灯</strong>作为视觉焦点——水晶、铜质或几何造型都是不错的选择。局部用射灯点亮艺术品或装饰柜，增加空间的戏剧感。</p>
+                </div>
+
+                <!-- Soft Furnishing -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🛋️</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">软装搭配</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">窗帘选择<strong>丝绒或高密度遮光布</strong>，颜色以灰色、米色或深咖啡色为主，搭配金属窗帘杆。抱枕采用<strong>丝绒、皮革或刺绣面料</strong>，混搭不同质感增加层次。地毯选用低调花纹或纯色款，材质以羊毛或仿羊毛为佳。装饰品精选<strong>金属烛台、大理石托盘、鲜花或干花</strong>，宁缺勿滥，每一件都要有存在感。</p>
+                </div>
+
+                <!-- Key Tips -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">设计贴士</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">轻奢风格的精髓在于<strong>"克制的精致"</strong>。金色元素是点睛之笔，但切忌过量——控制在整体面积的5%-10%最为理想。材质搭配要有<strong>对比与层次</strong>：硬质（大理石）搭配软质（丝绒）、哑光搭配亮面、深色搭配浅色。注重每个五金细节的统一性，门把手、水龙头、灯具的金属色调要一致。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suitable Homes & Budget -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Suitable Home Types -->
+                <div class="fade-left">
+                    <div class="bg-white rounded-2xl p-8 h-full">
+                        <div class="text-3xl mb-4">🏠</div>
+                        <h3 class="font-heading text-2xl font-bold text-navy mb-4">适合户型</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">轻奢风格对空间有一定要求，更适合中大型户型：</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>大型公寓 Large Condo</strong> — 1200sqft以上的高层公寓，开阔的空间更能展现轻奢的大气感</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>排屋 Terrace House</strong> — 中大型排屋经过合理设计，同样能呈现精致的轻奢效果</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>半独立 Semi-D</strong> — 宽敞的空间是轻奢设计的绝佳画布，层次感更强</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>独立式 Bungalow</strong> — 最理想的轻奢载体，高天花板与大面积空间让每个细节都能充分表达</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Budget Reference -->
+                <div class="fade-right">
+                    <div class="bg-white rounded-2xl p-8 h-full">
+                        <div class="text-3xl mb-4">💰</div>
+                        <h3 class="font-heading text-2xl font-bold text-navy mb-4">预算参考</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">轻奢风格属于<strong>中高端装修</strong>，主要预算集中在高品质材质和精致工艺上。</p>
+                        <div class="bg-gray-50 rounded-xl p-6 mb-4">
+                            <p class="text-navy font-semibold mb-2">💡 预算定位</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="h-3 bg-gold rounded-full" style="width: 75%;"></div>
+                                <div class="h-3 bg-gray-200 rounded-full" style="width: 25%;"></div>
+                            </div>
+                            <p class="text-sm text-gray-500">中高端 · Mid-High to High-End</p>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">主要预算花在：大理石纹/岩板材质、高端五金配件、造型灯具、皮革/丝绒家具、精致软装。虽然单价较高，但由于轻奢设计讲究"少而精"，不需要大量装饰品堆砌，合理规划下预算可控。建议将预算重点放在客厅和主卧，次要空间可适当简化。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-gradient py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-40 h-40 border border-gold/30 rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 border border-gold/20 rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 fade-up">
+            <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-4">Like This Style?</p>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">喜欢这个风格？</h2>
+            <p class="text-white/70 text-lg mb-3">让我们帮您打造低调奢华的理想家居</p>
+            <p class="text-white/50 text-base mb-10">30秒快速估价，免费无义务</p>
+            <a href="https://alvin0531.github.io/artcreation-quote/" class="inline-block bg-gold hover:bg-gold-dark text-navy font-bold px-10 py-5 rounded-xl transition-all text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
+                立即免费估价 Get Free Quote →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="font-heading text-xl font-bold">ART CREATION</h3>
+                    <p class="text-gold text-sm">DESIGN & BUILD</p>
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="../index.html" class="text-white/60 hover:text-gold transition-colors">← 返回首页</a>
+                    <a href="modern-minimalist.html" class="text-white/60 hover:text-gold transition-colors">现代简约</a>
+                    <a href="scandinavian.html" class="text-white/60 hover:text-gold transition-colors">北欧风</a>
+                    <a href="industrial.html" class="text-white/60 hover:text-gold transition-colors">工业风</a>
+                    <a href="japanese.html" class="text-white/60 hover:text-gold transition-colors">日式和风</a>
+                    <a href="rustic.html" class="text-white/60 hover:text-gold transition-colors">田园乡村</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center">
+                <p class="text-white/40 text-sm">© 2026 ART CREATION DESIGN & BUILD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/601XXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        // Scroll animations
+        const animatedEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        animatedEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

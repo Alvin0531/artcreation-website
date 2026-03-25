@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代简约风格 Modern Minimalist | ART CREATION DESIGN & BUILD</title>
+    <meta name="description" content="现代简约装修风格 — 干净利落的线条，中性色调搭配开放空间，less is more的生活美学。ART CREATION 新山一站式装修。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A1628',
+                        'navy-light': '#1a2a45',
+                        gold: '#C9A96E',
+                        'gold-light': '#d4bc8a',
+                        'gold-dark': '#b8944f',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #333; overflow-x: hidden; }
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        .stagger-children > *:nth-child(1) { transition-delay: 0s; }
+        .stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children > *:nth-child(3) { transition-delay: 0.15s; }
+        .stagger-children > *:nth-child(4) { transition-delay: 0.2s; }
+        .stagger-children > *:nth-child(5) { transition-delay: 0.25s; }
+        .stagger-children > *:nth-child(6) { transition-delay: 0.3s; }
+        .navbar { transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; }
+        .navbar.scrolled { background-color: rgba(10, 22, 40, 0.97); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .gold-line-center { width: 60px; height: 3px; background: #C9A96E; margin: 0 auto; }
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .color-swatch { width: 40px; height: 40px; border-radius: 50%; display: inline-block; border: 2px solid #e5e7eb; }
+        .gallery-item { transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.02); }
+        .cta-gradient { background: linear-gradient(135deg, #0A1628 0%, #1a2a45 50%, #0A1628 100%); }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(10,22,40,0.7) 0%, rgba(10,22,40,0.4) 50%, rgba(10,22,40,0.8) 100%); }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="font-heading text-xl sm:text-2xl font-bold text-white tracking-wide">ART CREATION</span>
+                    <span class="hidden sm:inline text-gold text-sm font-body">DESIGN & BUILD</span>
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="../index.html" class="text-white/80 hover:text-gold transition-colors text-sm font-medium">← 返回首页</a>
+                    <a href="https://alvin0531.github.io/artcreation-quote/" class="bg-gold hover:bg-gold-dark text-navy font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm hidden sm:inline-block">免费估价</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80" alt="现代简约风格" class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center px-4">
+            <p class="text-gold font-medium text-sm tracking-[0.3em] uppercase mb-4 fade-up">Design Style</p>
+            <h1 class="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 fade-up">现代简约</h1>
+            <p class="text-white/80 font-heading text-xl sm:text-2xl italic fade-up">Modern Minimalist</p>
+            <div class="gold-line-center mt-6 fade-up"></div>
+        </div>
+    </section>
+
+    <!-- Style Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Style Overview</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">风格概述</h2>
+                <div class="gold-line-center mb-8"></div>
+            </div>
+            <div class="space-y-6 text-gray-600 leading-relaxed text-base sm:text-lg fade-up">
+                <p>现代简约风格起源于20世纪初的现代主义运动，强调"少即是多"（Less is More）的设计哲学。这种风格摒弃了繁复的装饰，以简洁的线条、纯净的色彩和功能性至上的理念，打造出清爽、通透的居住空间。在马来西亚的热带气候下，现代简约风格尤其受到欢迎——简洁的空间设计让室内更加通风透气，视觉上也更加凉爽。</p>
+                <p>在新山（Johor Bahru）的住宅市场中，现代简约风格是最受欢迎的装修风格之一。无论是年轻的首购族还是想翻新旧屋的屋主，都青睐这种干净、大方的设计。它不仅能让有限的空间看起来更加宽敞，还能通过精心挑选的家具和材质，展现主人的品味与格调。</p>
+                <p>现代简约并不等于"空无一物"或"廉价简陋"。相反，它要求每一件物品都经过深思熟虑的选择，每一处细节都服务于整体的和谐美感。好的现代简约设计，是在克制中见功力，在留白中见匠心。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Gallery</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">灵感图库</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 stagger-children">
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&q=80" alt="现代简约客厅" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="现代简约厨房" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="现代简约卧室" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="现代简约空间" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80" alt="现代简约设计" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="gallery-item fade-up rounded-xl overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18f6b6637?w=800&q=80" alt="现代简约浴室" class="w-full h-full object-cover" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Elements -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-3">Design Elements</p>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">设计要点</h2>
+                <div class="gold-line-center mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+                <!-- Color Palette -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">色彩搭配</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">以白色、米白、浅灰为主色调，搭配少量黑色或深灰作为点缀。偶尔加入一抹大地色系（如驼色、卡其色）增添温度。整体色彩控制在3种以内，保持视觉的统一与和谐。</p>
+                    <div class="flex gap-3 mt-4">
+                        <span class="color-swatch" style="background:#FFFFFF;" title="白色"></span>
+                        <span class="color-swatch" style="background:#F5F5F0;" title="米白"></span>
+                        <span class="color-swatch" style="background:#D1D5DB;" title="浅灰"></span>
+                        <span class="color-swatch" style="background:#374151;" title="深灰"></span>
+                        <span class="color-swatch" style="background:#C4A882;" title="驼色"></span>
+                    </div>
+                </div>
+
+                <!-- Materials -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🪨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">材质选择</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">常用材质包括：<strong>大面积瓷砖</strong>（800×800或更大规格，减少缝隙）、<strong>SPC地板</strong>（木纹色调）、<strong>石英石台面</strong>（厨房与浴室）、<strong>哑光漆面</strong>（墙壁与天花板），以及少量<strong>玻璃与不锈钢</strong>元素。材质表面以哑光、细腻为主，避免过多反光面。</p>
+                </div>
+
+                <!-- Furniture -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🪑</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">家具风格</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">选择线条简洁、造型利落的家具。沙发以低矮款式为佳，颜色以灰色、米色为主。餐桌推荐白色或浅木色。电视柜建议悬浮式设计，增加地面通透感。<strong>收纳</strong>非常关键——大量使用隐藏式收纳柜，保持台面整洁。</p>
+                </div>
+
+                <!-- Lighting -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">💡</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">灯光设计</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">以<strong>嵌入式筒灯</strong>和<strong>隐藏式灯带</strong>为主照明，避免传统吊灯的厚重感。天花板L-box内嵌灯带，营造柔和的间接照明效果。色温建议选择3000K-4000K（暖白光），既温馨又不失明亮。重点区域可加设射灯或落地灯作为装饰照明。</p>
+                </div>
+
+                <!-- Soft Furnishing -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">🛋️</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">软装搭配</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">窗帘选择素色纱帘或百叶帘，保持光线通透。抱枕、地毯采用与主色调一致的中性色系，材质以亚麻、棉麻为佳。装饰画以抽象几何或黑白摄影为主，少量绿植（如龟背竹、琴叶榕）增添生机。记住：<strong>每一件软装都要精选</strong>，宁少勿多。</p>
+                </div>
+
+                <!-- Key Tips -->
+                <div class="fade-up bg-gray-50 rounded-2xl p-8">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-3">设计贴士</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">现代简约风格的灵魂在于<strong>"留白"</strong>。不要急着填满每一个角落，适当的留白能让空间更有呼吸感。同时，注重<strong>收纳规划</strong>——把杂物藏起来，才能维持简约的外观。建议在设计初期就规划好足够的储物空间。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suitable Homes & Budget -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Suitable Home Types -->
+                <div class="fade-left">
+                    <div class="bg-white rounded-2xl p-8 h-full">
+                        <div class="text-3xl mb-4">🏠</div>
+                        <h3 class="font-heading text-2xl font-bold text-navy mb-4">适合户型</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">现代简约风格几乎适合所有户型，尤其推荐：</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>公寓 Apartment / Condo</strong> — 简约设计能最大化利用有限空间，让小户型看起来更宽敞</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>排屋 Terrace House</strong> — 适合翻新老排屋，让狭长的格局更加通透</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>半独立 Semi-D</strong> — 较大空间更能展现简约设计的大气感</li>
+                            <li class="flex items-start"><span class="text-gold mr-2 mt-1">●</span><strong>独立式 Bungalow</strong> — 大面积的留白与高天花板是现代简约的绝佳舞台</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Budget Reference -->
+                <div class="fade-right">
+                    <div class="bg-white rounded-2xl p-8 h-full">
+                        <div class="text-3xl mb-4">💰</div>
+                        <h3 class="font-heading text-2xl font-bold text-navy mb-4">预算参考</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">现代简约风格是<strong>性价比最高</strong>的装修风格之一。由于减少了繁复的造型和装饰，材料和人工成本相对可控。</p>
+                        <div class="bg-gray-50 rounded-xl p-6 mb-4">
+                            <p class="text-navy font-semibold mb-2">💡 预算定位</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="h-3 bg-gold rounded-full" style="width: 50%;"></div>
+                                <div class="h-3 bg-gray-200 rounded-full" style="width: 50%;"></div>
+                            </div>
+                            <p class="text-sm text-gray-500">中等偏低 · Budget-Friendly to Mid-Range</p>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">主要预算花在：优质瓷砖/地板、定制收纳柜、天花板灯光设计。省下了复杂的造型墙和繁多的装饰品费用。总体而言，是追求品质感但预算有限的屋主的理想选择。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-gradient py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-40 h-40 border border-gold/30 rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 border border-gold/20 rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 fade-up">
+            <p class="text-gold font-medium text-sm tracking-[0.2em] uppercase mb-4">Like This Style?</p>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">喜欢这个风格？</h2>
+            <p class="text-white/70 text-lg mb-3">让我们帮您把梦想中的现代简约之家变成现实</p>
+            <p class="text-white/50 text-base mb-10">30秒快速估价，免费无义务</p>
+            <a href="https://alvin0531.github.io/artcreation-quote/" class="inline-block bg-gold hover:bg-gold-dark text-navy font-bold px-10 py-5 rounded-xl transition-all text-lg shadow-lg hover:shadow-xl hover:scale-105 transform">
+                立即免费估价 Get Free Quote →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="font-heading text-xl font-bold">ART CREATION</h3>
+                    <p class="text-gold text-sm">DESIGN & BUILD</p>
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="../index.html" class="text-white/60 hover:text-gold transition-colors">← 返回首页</a>
+                    <a href="scandinavian.html" class="text-white/60 hover:text-gold transition-colors">北欧风</a>
+                    <a href="industrial.html" class="text-white/60 hover:text-gold transition-colors">工业风</a>
+                    <a href="japanese.html" class="text-white/60 hover:text-gold transition-colors">日式和风</a>
+                    <a href="modern-luxury.html" class="text-white/60 hover:text-gold transition-colors">轻奢风</a>
+                    <a href="rustic.html" class="text-white/60 hover:text-gold transition-colors">田园乡村</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center">
+                <p class="text-white/40 text-sm">© 2026 ART CREATION DESIGN & BUILD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/601XXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        // Scroll animations
+        const animatedEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        animatedEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
